@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-fixed-dim": "#ffb599", "inverse-on-surface": "#eef0ff", "outline": "#6e7b6c", "background": "#faf8ff", "on-tertiary": "#ffffff", "tertiary-container": "#cc4900", "primary": "#006b2c", "on-primary-fixed-variant": "#005320", "error-container": "#ffdad6", "secondary-fixed-dim": "#ffb95f", "surface-tint": "#006e2d", "on-tertiary-fixed-variant": "#7f2b00", "on-secondary": "#ffffff", "on-surface-variant": "#3e4a3d", "inverse-primary": "#62df7d", "on-tertiary-fixed": "#370e00", "secondary": "#855300", "on-primary-fixed": "#002109", "on-secondary-fixed": "#2a1700", "surface": "#faf8ff", "on-tertiary-container": "#fffbff", "surface-container": "#eaedff", "surface-container-highest": "#dae2fd", "surface-bright": "#faf8ff", "on-background": "#131b2e", "secondary-fixed": "#ffddb8", "inverse-surface": "#283044", "tertiary": "#a33900", "primary-fixed": "#7ffc97", "error": "#ba1a1a", "on-secondary-container": "#684000", "on-error": "#ffffff", "on-primary": "#ffffff", "on-primary-container": "#f7fff2", "on-secondary-fixed-variant": "#653e00", "tertiary-fixed": "#ffdbce", "surface-variant": "#dae2fd", "surface-container-low": "#f2f3ff", "primary-container": "#00873a", "primary-fixed-dim": "#62df7d", "secondary-container": "#fea619", "surface-dim": "#d2d9f4", "on-surface": "#131b2e", "outline-variant": "#bdcaba", "surface-container-lowest": "#ffffff", "surface-container-high": "#e2e7ff", "on-error-container": "#93000a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-tablet": "1.5rem", "space-xl": "2rem", "gutter": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "margin": "1rem" }, fontFamily: { "body-md": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "title-md": ["Inter"], "label-md": ["Inter"], "label-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "title-lg": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"] }, fontSize: { "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }], "title-md": ["14px", { lineHeight: "20px", fontWeight: "600" }], "label-md": ["11px", { lineHeight: "14px", letterSpacing: "0.4px", fontWeight: "600" }], "label-lg": ["13px", { lineHeight: "18px", letterSpacing: "0.1px", fontWeight: "600" }], "headline-lg-mobile": ["26px", { lineHeight: "32px", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "title-lg": ["16px", { lineHeight: "22px", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "12px", letterSpacing: "0.5px", fontWeight: "700" }], "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="pt-safe"><div class="h-6 px-margin flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>09:41</span><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span><span class="material-symbols-outlined text-[14px]">wifi</span><span class="material-symbols-outlined text-[16px]">battery_full</span></div></div><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Fruit Shop Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WTpKfRR83rChpSN9bn0lebqJzol6RNYHUC0gOh5-eCwwF5_kbJA52OVWitBKplJE4uuU4vlHcouL3S8JvjJ4Tkr_X_suNaO41Xn91n3bGMexfJ_84uvCejFljpedVufRLN4-eFp2bSW1AfjrqE-W0_NuJ8uZ3HH571bJTnlOfgNLqr-abWkk62qZ3h59rkNg9swvYIpfBXe6u3smOG9spm1IJpjvn0eW2FCVmUq7LYFYHCM-Dy-y_RSeKU"/><div class="min-w-0"><div class="font-label-sm text-label-sm text-primary uppercase tracking-wider truncate">Fruit Shop Ops</div><h1 class="font-title-lg text-title-lg text-on-surface truncate">Đơn Hàng</h1></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">Quản lý</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-[0_2px_4px_rgba(0,107,44,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-22 pb-24 bg-surface"><div class="flex flex-col w-full px-margin space-y-space-md">
+<!-- Role Toggle & Synced DB Status Banner -->
+<section class="bg-surface-container-low rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">sync</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wide">Room DB • SQLite Active</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+        Đã đồng bộ
+      </span>
+</div>
+<!-- Toggle Role Selector -->
+<div class="flex items-center justify-between bg-surface-container rounded-lg p-1">
+<button class="flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded font-label-lg text-label-lg transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm" id="role-customer-btn" onclick="setRole('customer')" type="button">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span>Khách hàng</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded font-label-lg text-label-lg transition-all duration-200 text-on-surface-variant hover:text-on-surface" id="role-admin-btn" onclick="setRole('admin')" type="button">
+<span class="material-symbols-outlined text-[18px]">admin_panel_settings</span>
+<span>Quản trị viên (Admin)</span>
+</button>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm px-0.5">
+<div class="flex items-center gap-1 text-on-surface-variant" id="role-hint-text">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Chế độ: Đang xem lịch sử &amp; tiến trình đơn cá nhân</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Tự động lưu Cache</span>
+</div>
+</section>
+<!-- Filter Status Tabs (Horizontal Scrollable) -->
+<section class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5">
+<button class="filter-tab-btn px-3 py-1.5 rounded-full font-label-lg text-label-lg whitespace-nowrap bg-primary text-on-primary shadow-sm transition-colors" data-filter="ALL" onclick="filterStatus('ALL')">
+      Tất cả (<span id="count-all">3</span>)
+    </button>
+<button class="filter-tab-btn px-3 py-1.5 rounded-full font-label-lg text-label-lg whitespace-nowrap bg-surface-container text-on-surface-variant transition-colors" data-filter="Pending" onclick="filterStatus('Pending')">
+      Chờ duyệt (<span id="count-pending">1</span>)
+    </button>
+<button class="filter-tab-btn px-3 py-1.5 rounded-full font-label-lg text-label-lg whitespace-nowrap bg-surface-container text-on-surface-variant transition-colors" data-filter="Confirmed" onclick="filterStatus('Confirmed')">
+      Đã xác nhận (<span id="count-confirmed">1</span>)
+    </button>
+<button class="filter-tab-btn px-3 py-1.5 rounded-full font-label-lg text-label-lg whitespace-nowrap bg-surface-container text-on-surface-variant transition-colors" data-filter="Completed" onclick="filterStatus('Completed')">
+      Hoàn thành (<span id="count-completed">1</span>)
+    </button>
+</section>
+<!-- Order Cards List Container -->
+<section class="space-y-space-md" id="orders-container">
+<!-- Card 1: ORD-1082 (Pending) -->
+<article class="order-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-300 space-y-space-sm" data-order-id="ORD-1082" data-status="Pending" id="order-card-1082">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-lg text-title-lg text-on-surface">#ORD-1082</span>
+<span class="status-badge inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant">
+              Pending • Chờ duyệt
+            </span>
+</div>
+<div class="flex items-center gap-1 mt-0.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>24/05/2024 • 08:30</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-title-lg text-title-lg text-primary block font-bold">240.000 đ</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2.0 kg • COD</span>
+</div>
+</div>
+<!-- Item Snapshot -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg bg-surface-container-low">
+<img alt="Táo Envy" class="w-14 h-14 rounded-lg object-cover flex-shrink-0" data-alt="Close up fresh crisp red Envy apples stacked in a wooden craft display box on a clean bright organic grocer market countertop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkeDk7Ja_d17SOefYoxRWjxmcIKTqihZzbl8LS4t7hJuc2D7f3blno94OY0iMWVxZav1Pe8RoF4zP4yY3nhWYCGCbQ6GxCM0aoyVwgEhjLswwnpJjgCu0ktRgaJdtoyfslnkGw3LYjjXvg2KJPaRo78BL_fuIDFOiMnmeneJQ2ztS3cd2jieLyDccoo3BrJuDk00QwyHILAp4mTCmoX5iDHZyAM8mVmB0eEun3WnPQIWzwIE1IdrgoVw"/>
+<div class="min-w-0 flex-1">
+<h4 class="font-title-md text-title-md text-on-surface truncate">Táo Envy New Zealand</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Số lượng: 2 kg • Đơn giá: 120.000 đ/kg</p>
+<div class="flex items-center gap-1 mt-0.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-primary">person</span>
+<span class="truncate">Nguyễn Văn An (ID: KH-8812)</span>
+</div>
+</div>
+</div>
+<!-- Stepper Visual Progress -->
+<div class="pt-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm mb-1.5">
+<span class="step-label-pending text-primary font-bold">1. Chờ duyệt</span>
+<span class="step-label-confirmed text-on-surface-variant">2. Đã xác nhận</span>
+<span class="step-label-completed text-on-surface-variant">3. Hoàn tất</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden flex">
+<div class="step-progress-bar h-full bg-primary transition-all duration-500 w-1/3"></div>
+</div>
+</div>
+<!-- Admin Action Box (Toggled in Admin Mode) -->
+<div class="admin-action-zone pt-1 hidden">
+<button class="admin-advance-btn w-full h-11 rounded-full bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm active:scale-[0.99] transition-transform" onclick="advanceOrderStatus('ORD-1082')" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Duyệt đơn → Confirmed</span>
+</button>
+</div>
+<!-- Customer View Footer -->
+<div class="customer-info-zone flex items-center justify-between pt-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">hourglass_top</span>
+          Cửa hàng đang chuẩn bị soạn táo
+        </span>
+<button class="text-primary font-label-lg text-label-lg flex items-center gap-0.5" type="button">
+          Chi tiết <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Card 2: ORD-1079 (Confirmed) -->
+<article class="order-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-300 space-y-space-sm" data-order-id="ORD-1079" data-status="Confirmed" id="order-card-1079">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-lg text-title-lg text-on-surface">#ORD-1079</span>
+<span class="status-badge inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed">
+              Confirmed • Đã duyệt
+            </span>
+</div>
+<div class="flex items-center gap-1 mt-0.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>23/05/2024 • 15:45</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-title-lg text-title-lg text-primary block font-bold">175.000 đ</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">5.0 kg • Chuyển khoản</span>
+</div>
+</div>
+<!-- Item Snapshot -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg bg-surface-container-low">
+<img alt="Cam Sành" class="w-14 h-14 rounded-lg object-cover flex-shrink-0" data-alt="Plump ripe Vietnamese king oranges Cam Sanh with textured glossy peel sliced in half on a clean wooden cutting board in a sunlit store" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLMLakN350NaB-MF7P6eHi1pDIjxJALR0295H9VjrlFyVILTK3DtNa3hCkZsD0V2qWe0Myuzsy02qI4i9eWx_17t8-JRd0Eft9rE5JfOv4eOTF0GOL8lA86ZtVqdFu3EN_djiVvat7R2RxEYzJMr3CfeSYuNllzHZjKmllywqnICV10JxGwaS152eUR9sehfMeQiGJLrDAdlJPysJJHmZlaI9g_KaHfKiMLDjY_1cuCYdpXeMBMsUNkw"/>
+<div class="min-w-0 flex-1">
+<h4 class="font-title-md text-title-md text-on-surface truncate">Cam Sành Tiền Giang (Loại 1)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Số lượng: 5 kg • Đơn giá: 35.000 đ/kg</p>
+<div class="flex items-center gap-1 mt-0.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-primary">person</span>
+<span class="truncate">Trần Thị Mai (ID: KH-6401)</span>
+</div>
+</div>
+</div>
+<!-- Stepper Visual Progress -->
+<div class="pt-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm mb-1.5">
+<span class="step-label-pending text-on-surface-variant">1. Chờ duyệt</span>
+<span class="step-label-confirmed text-secondary font-bold">2. Đã xác nhận</span>
+<span class="step-label-completed text-on-surface-variant">3. Hoàn tất</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden flex">
+<div class="step-progress-bar h-full bg-secondary-container transition-all duration-500 w-2/3"></div>
+</div>
+</div>
+<!-- Admin Action Box -->
+<div class="admin-action-zone pt-1 hidden">
+<button class="admin-advance-btn w-full h-11 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm active:scale-[0.99] transition-transform" onclick="advanceOrderStatus('ORD-1079')" type="button">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span>Giao thành công → Completed</span>
+</button>
+</div>
+<!-- Customer View Footer -->
+<div class="customer-info-zone flex items-center justify-between pt-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[16px]">moped</span>
+          Đang bàn giao shipper vận chuyển
+        </span>
+<button class="text-primary font-label-lg text-label-lg flex items-center gap-0.5" type="button">
+          Chi tiết <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Card 3: ORD-1075 (Completed) -->
+<article class="order-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-300 space-y-space-sm" data-order-id="ORD-1075" data-status="Completed" id="order-card-1075">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-lg text-title-lg text-on-surface">#ORD-1075</span>
+<span class="status-badge inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant">
+              Completed • Thành công
+            </span>
+</div>
+<div class="flex items-center gap-1 mt-0.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>22/05/2024 • 10:15</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-title-lg text-title-lg text-primary block font-bold">180.000 đ</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1 Hộp • Đã thanh toán</span>
+</div>
+</div>
+<!-- Item Snapshot -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg bg-surface-container-low">
+<img alt="Dâu tây Đà Lạt" class="w-14 h-14 rounded-lg object-cover flex-shrink-0" data-alt="Fresh vibrant red Da Lat strawberries packed neatly in an eco-friendly cardboard produce carton with fresh morning dew drops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB84n1uTMZG_YAY1f8DPpMQrshoxkMNL5d34qYE0f0Ybwt-8YgGYMOGyW87lD1X7Kam7hiy1Zn_Pq2QYX8h4v6NiujX7151H4jndVR334XT5sUQ_QziAwCH1w4YjxzgqfnpaW1k5H8MfpboiNoXBA5h-Zyki3_1l7R_4zjWT05gWijZ6TjK-IWH1Wn68mne9XIOYC0W-EyiaUTqJnLtQGHB_EdLSQiCcBtYnTS3FAnxc0G5voHWiKiHLQ"/>
+<div class="min-w-0 flex-1">
+<h4 class="font-title-md text-title-md text-on-surface truncate">Dâu Tây Giống Nhật Đà Lạt</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Số lượng: 1 hộp (500g) • Đơn giá: 180.000 đ</p>
+<div class="flex items-center gap-1 mt-0.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-primary">person</span>
+<span class="truncate">Lê Hoàng Nam (ID: KH-3092)</span>
+</div>
+</div>
+</div>
+<!-- Stepper Visual Progress -->
+<div class="pt-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm mb-1.5">
+<span class="step-label-pending text-on-surface-variant">1. Chờ duyệt</span>
+<span class="step-label-confirmed text-on-surface-variant">2. Đã xác nhận</span>
+<span class="step-label-completed text-primary font-bold">3. Đã giao xong</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden flex">
+<div class="step-progress-bar h-full bg-primary transition-all duration-500 w-full"></div>
+</div>
+</div>
+<!-- Admin Action Box (Terminal State) -->
+<div class="admin-action-zone pt-1 hidden">
+<div class="w-full h-10 rounded-lg bg-surface-container flex items-center justify-center gap-1.5 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Đơn hàng đã hoàn tất • Đóng chu trình SQLite</span>
+</div>
+</div>
+<!-- Customer View Footer -->
+<div class="customer-info-zone flex items-center justify-between pt-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+          Đã nhận hàng thành công
+        </span>
+<button class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm hover:opacity-90" type="button">
+          Mua lại
+        </button>
+</div>
+</article>
+</section>
+<!-- Empty state placeholder when filtering -->
+<div class="hidden flex-col items-center justify-center p-space-xl text-center space-y-space-sm bg-surface-container-low rounded-xl" id="empty-state">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">inventory</span>
+</div>
+<div class="space-y-1">
+<h3 class="font-title-lg text-title-lg text-on-surface">Không có đơn hàng nào</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Chưa có đơn hàng nào khớp với bộ lọc trạng thái được chọn.</p>
+</div>
+</div>
+<!-- Database & Storage Info Card -->
+<section class="p-space-md rounded-xl bg-surface-container-high/60 space-y-space-xs text-on-surface-variant">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">storage</span>
+<span class="font-title-md text-title-md text-on-surface">Quy chuẩn dữ liệu đơn hàng</span>
+</div>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface">Order Table</span>
+</div>
+<p class="font-body-sm text-body-sm leading-relaxed">
+      Lược đồ: <code class="text-primary font-mono text-[11px]">id, customerId, orderDate, totalAmount, status</code>.
+      Luồng tiến trình một chiều: <strong class="text-on-surface font-semibold">Pending → Confirmed → Completed</strong> theo chuẩn quy ước nghiệp vụ.
+    </p>
+</section>
+</div>
+<script>
+  let currentRole = 'customer'; // 'customer' | 'admin'
+  let currentFilter = 'ALL';
+
+  function setRole(role) {
+    currentRole = role;
+    const custBtn = document.getElementById('role-customer-btn');
+    const adminBtn = document.getElementById('role-admin-btn');
+    const hintText = document.getElementById('role-hint-text');
+
+    if (role === 'admin') {
+      custBtn.className = "flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded font-label-lg text-label-lg transition-all duration-200 text-on-surface-variant hover:text-on-surface";
+      adminBtn.className = "flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded font-label-lg text-label-lg transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm";
+      hintText.innerHTML = `<span class="material-symbols-outlined text-[16px] text-tertiary">edit_note</span><span class="text-tertiary font-semibold">Chế độ Quản trị: Có quyền cập nhật tiến trình trạng thái</span>`;
+      
+      document.querySelectorAll('.admin-action-zone').forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.customer-info-zone').forEach(el => el.classList.add('hidden'));
+    } else {
+      adminBtn.className = "flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded font-label-lg text-label-lg transition-all duration-200 text-on-surface-variant hover:text-on-surface";
+      custBtn.className = "flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded font-label-lg text-label-lg transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm";
+      hintText.innerHTML = `<span class="material-symbols-outlined text-[16px]">visibility</span><span>Chế độ: Đang xem lịch sử &amp; tiến trình đơn cá nhân</span>`;
+      
+      document.querySelectorAll('.admin-action-zone').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.customer-info-zone').forEach(el => el.classList.remove('hidden'));
+    }
+  }
+
+  function filterStatus(status) {
+    currentFilter = status;
+    const buttons = document.querySelectorAll('.filter-tab-btn');
+    buttons.forEach(btn => {
+      if (btn.getAttribute('data-filter') === status) {
+        btn.className = "filter-tab-btn px-3 py-1.5 rounded-full font-label-lg text-label-lg whitespace-nowrap bg-primary text-on-primary shadow-sm transition-colors";
+      } else {
+        btn.className = "filter-tab-btn px-3 py-1.5 rounded-full font-label-lg text-label-lg whitespace-nowrap bg-surface-container text-on-surface-variant transition-colors";
+      }
+    });
+
+    const cards = document.querySelectorAll('.order-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const cardStatus = card.getAttribute('data-status');
+      if (status === 'ALL' || cardStatus === status) {
+        card.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    const emptyState = document.getElementById('empty-state');
+    if (visibleCount === 0) {
+      emptyState.classList.remove('hidden');
+      emptyState.classList.add('flex');
+    } else {
+      emptyState.classList.add('hidden');
+      emptyState.classList.remove('flex');
+    }
+  }
+
+  function updateCounts() {
+    let pendingCount = 0;
+    let confirmedCount = 0;
+    let completedCount = 0;
+
+    document.querySelectorAll('.order-card').forEach(card => {
+      const st = card.getAttribute('data-status');
+      if (st === 'Pending') pendingCount++;
+      if (st === 'Confirmed') confirmedCount++;
+      if (st === 'Completed') completedCount++;
+    });
+
+    const allCount = pendingCount + confirmedCount + completedCount;
+    document.getElementById('count-all').innerText = allCount;
+    document.getElementById('count-pending').innerText = pendingCount;
+    document.getElementById('count-confirmed').innerText = confirmedCount;
+    document.getElementById('count-completed').innerText = completedCount;
+  }
+
+  function advanceOrderStatus(orderId) {
+    const card = document.querySelector(`[data-order-id="${orderId}"]`);
+    if (!card) return;
+
+    const currentStatus = card.getAttribute('data-status');
+
+    if (currentStatus === 'Pending') {
+      // Advance to Confirmed
+      card.setAttribute('data-status', 'Confirmed');
+      
+      // Update badge
+      const badge = card.querySelector('.status-badge');
+      badge.className = "status-badge inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed";
+      badge.innerHTML = "Confirmed &bull; Đã duyệt";
+
+      // Update progress bar
+      const bar = card.querySelector('.step-progress-bar');
+      bar.className = "step-progress-bar h-full bg-secondary-container transition-all duration-500 w-2/3";
+
+      // Update step labels
+      card.querySelector('.step-label-pending').className = "step-label-pending text-on-surface-variant";
+      card.querySelector('.step-label-confirmed').className = "step-label-confirmed text-secondary font-bold";
+
+      // Update Admin Action button
+      const adminZone = card.querySelector('.admin-action-zone');
+      adminZone.innerHTML = `
+        <button type="button" onclick="advanceOrderStatus('${orderId}')" class="admin-advance-btn w-full h-11 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm active:scale-[0.99] transition-transform">
+          <span class="material-symbols-outlined text-[18px]">local_shipping</span>
+          <span>Giao thành công &rarr; Completed</span>
+        </button>
+      `;
+
+      // Update Customer status text
+      const custZone = card.querySelector('.customer-info-zone');
+      custZone.innerHTML = `
+        <span class="flex items-center gap-1 text-secondary">
+          <span class="material-symbols-outlined text-[16px]">moped</span>
+          Đang bàn giao shipper vận chuyển
+        </span>
+        <button type="button" class="text-primary font-label-lg text-label-lg flex items-center gap-0.5">
+          Chi tiết <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+        </button>
+      `;
+
+    } else if (currentStatus === 'Confirmed') {
+      // Advance to Completed
+      card.setAttribute('data-status', 'Completed');
+
+      // Update badge
+      const badge = card.querySelector('.status-badge');
+      badge.className = "status-badge inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant";
+      badge.innerHTML = "Completed &bull; Thành công";
+
+      // Update progress bar
+      const bar = card.querySelector('.step-progress-bar');
+      bar.className = "step-progress-bar h-full bg-primary transition-all duration-500 w-full";
+
+      // Update step labels
+      card.querySelector('.step-label-confirmed').className = "step-label-confirmed text-on-surface-variant";
+      card.querySelector('.step-label-completed').className = "step-label-completed text-primary font-bold";
+
+      // Update Admin Action button to final lock
+      const adminZone = card.querySelector('.admin-action-zone');
+      adminZone.innerHTML = `
+        <div class="w-full h-10 rounded-lg bg-surface-container flex items-center justify-center gap-1.5 text-on-surface-variant font-label-md text-label-md">
+          <span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          <span>Đơn hàng đã hoàn tất &bull; Đóng chu trình SQLite</span>
+        </div>
+      `;
+
+      // Update Customer status text
+      const custZone = card.querySelector('.customer-info-zone');
+      custZone.innerHTML = `
+        <span class="flex items-center gap-1 text-primary">
+          <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+          Đã nhận hàng thành công
+        </span>
+        <button type="button" class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm hover:opacity-90">
+          Mua lại
+        </button>
+      `;
+    }
+
+    updateCounts();
+    filterStatus(currentFilter);
+  }
+
+  // Initial call
+  updateCounts();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_16px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[48px] py-1 text-on-surface-variant transition-colors" data-path="cua-hang" href="#"><span class="material-symbols-outlined text-[24px]">storefront</span><span class="font-label-md text-label-md mt-0.5">Cửa hàng</span></a><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[48px] py-1 text-on-surface-variant transition-colors" data-path="don-hang" href="#"><span class="material-symbols-outlined text-[24px]">receipt_long</span><span class="font-label-md text-label-md mt-0.5">Đơn hàng</span></a><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[48px] py-1 text-on-surface-variant transition-colors" data-path="quan-ly-kho" href="#"><span class="material-symbols-outlined text-[24px]">inventory_2</span><span class="font-label-md text-label-md mt-0.5">Quản lý kho</span></a><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[48px] py-1 text-on-surface-variant transition-colors" data-path="tai-khoan" href="#"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-md text-label-md mt-0.5">Tài khoản</span></a></div></nav></body></html>

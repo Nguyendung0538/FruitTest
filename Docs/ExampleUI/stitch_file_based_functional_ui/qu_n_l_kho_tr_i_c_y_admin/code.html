@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-fixed-dim": "#ffb599", "inverse-on-surface": "#eef0ff", "outline": "#6e7b6c", "background": "#faf8ff", "on-tertiary": "#ffffff", "tertiary-container": "#cc4900", "primary": "#006b2c", "on-primary-fixed-variant": "#005320", "error-container": "#ffdad6", "secondary-fixed-dim": "#ffb95f", "surface-tint": "#006e2d", "on-tertiary-fixed-variant": "#7f2b00", "on-secondary": "#ffffff", "on-surface-variant": "#3e4a3d", "inverse-primary": "#62df7d", "on-tertiary-fixed": "#370e00", "secondary": "#855300", "on-primary-fixed": "#002109", "on-secondary-fixed": "#2a1700", "surface": "#faf8ff", "on-tertiary-container": "#fffbff", "surface-container": "#eaedff", "surface-container-highest": "#dae2fd", "surface-bright": "#faf8ff", "on-background": "#131b2e", "secondary-fixed": "#ffddb8", "inverse-surface": "#283044", "tertiary": "#a33900", "primary-fixed": "#7ffc97", "error": "#ba1a1a", "on-secondary-container": "#684000", "on-error": "#ffffff", "on-primary": "#ffffff", "on-primary-container": "#f7fff2", "on-secondary-fixed-variant": "#653e00", "tertiary-fixed": "#ffdbce", "surface-variant": "#dae2fd", "surface-container-low": "#f2f3ff", "primary-container": "#00873a", "primary-fixed-dim": "#62df7d", "secondary-container": "#fea619", "surface-dim": "#d2d9f4", "on-surface": "#131b2e", "outline-variant": "#bdcaba", "surface-container-lowest": "#ffffff", "surface-container-high": "#e2e7ff", "on-error-container": "#93000a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-tablet": "1.5rem", "space-xl": "2rem", "gutter": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "margin": "1rem" }, fontFamily: { "body-md": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "title-md": ["Inter"], "label-md": ["Inter"], "label-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "title-lg": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"] }, fontSize: { "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }], "title-md": ["14px", { lineHeight: "20px", fontWeight: "600" }], "label-md": ["11px", { lineHeight: "14px", letterSpacing: "0.4px", fontWeight: "600" }], "label-lg": ["13px", { lineHeight: "18px", letterSpacing: "0.1px", fontWeight: "600" }], "headline-lg-mobile": ["26px", { lineHeight: "32px", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "title-lg": ["16px", { lineHeight: "22px", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "12px", letterSpacing: "0.5px", fontWeight: "700" }], "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="pt-safe"><div class="h-6 px-margin flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>09:41</span><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span><span class="material-symbols-outlined text-[14px]">wifi</span><span class="material-symbols-outlined text-[16px]">battery_full</span></div></div><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Fruit Shop Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WTpKfRR83rChpSN9bn0lebqJzol6RNYHUC0gOh5-eCwwF5_kbJA52OVWitBKplJE4uuU4vlHcouL3S8JvjJ4Tkr_X_suNaO41Xn91n3bGMexfJ_84uvCejFljpedVufRLN4-eFp2bSW1AfjrqE-W0_NuJ8uZ3HH571bJTnlOfgNLqr-abWkk62qZ3h59rkNg9swvYIpfBXe6u3smOG9spm1IJpjvn0eW2FCVmUq7LYFYHCM-Dy-y_RSeKU"/><div class="min-w-0"><div class="font-label-sm text-label-sm text-primary uppercase tracking-wider truncate">Fruit Shop Ops</div><h1 class="font-title-lg text-title-lg text-on-surface truncate">Quản Lý Kho</h1></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">Quản lý</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-[0_2px_4px_rgba(0,107,44,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-22 pb-24 bg-surface"><div class="flex flex-col w-full px-margin pb-space-xl">
+<!-- Expiry & Metric Summary Row -->
+<div class="grid grid-cols-2 gap-space-sm mb-space-md">
+<!-- Total items card -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between shadow-sm">
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Tổng mặt hàng</span>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">48</span>
+<span class="font-label-md text-label-md text-on-surface-variant">mã SP</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+</div>
+</div>
+<!-- Fresh batch card -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between shadow-sm">
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Còn tươi tốt</span>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold">42</span>
+<span class="font-label-md text-label-md text-primary">87.5%</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+</div>
+<!-- Expiring Soon card (Actionable trigger) -->
+<div class="bg-secondary-fixed/50 active:scale-[0.98] transition-transform rounded-xl p-space-sm flex items-center justify-between shadow-sm cursor-pointer" onclick="filterStatus('warning')">
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-on-secondary-fixed-variant uppercase tracking-wider block font-semibold">Sắp hết hạn (≤3d)</span>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-secondary font-bold">04</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Cần sale</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-on-secondary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">timer</span>
+</div>
+</div>
+<!-- Expired card (Alert trigger) -->
+<div class="bg-error-container/60 active:scale-[0.98] transition-transform rounded-xl p-space-sm flex items-center justify-between shadow-sm cursor-pointer" onclick="filterStatus('expired')">
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-on-error-container uppercase tracking-wider block font-semibold">Đã quá hạn</span>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-error font-bold">02</span>
+<span class="font-label-sm text-label-sm text-error font-semibold">Hủy / Giảm</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-error text-on-error flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">event_busy</span>
+</div>
+</div>
+</div>
+<!-- Search and Actions Bar -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-11 pr-10 bg-surface-container-low rounded-xl font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all shadow-sm" id="searchInput" oninput="handleSearch(this.value)" placeholder="Tìm tên trái cây, mã lô, danh mục..." type="text"/>
+<button class="absolute right-3 w-6 h-6 flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="clearSearch()">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<!-- Filter chips (Horizontally scrollable) -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5">
+<button class="filter-chip active-filter px-3.5 py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1.5 flex-shrink-0 transition-colors bg-primary text-on-primary shadow-sm" data-chip="all" onclick="setFilter('all')">
+<span>Tất cả (48)</span>
+</button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1 flex-shrink-0 transition-colors bg-surface-container-low text-on-surface-variant hover:bg-surface-container" data-chip="warning" onclick="setFilter('warning')">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>Sắp hết hạn (4)</span>
+</button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1 flex-shrink-0 transition-colors bg-surface-container-low text-on-surface-variant hover:bg-surface-container" data-chip="expired" onclick="setFilter('expired')">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Quá hạn (2)</span>
+</button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1 flex-shrink-0 transition-colors bg-surface-container-low text-on-surface-variant hover:bg-surface-container" data-chip="out-of-stock" onclick="setFilter('out-of-stock')">
+<span>Hết hàng (0)</span>
+</button>
+</div>
+</div>
+<!-- Operational Section Header & Quick Add Button -->
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-on-surface">Kho hàng vận hành</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold" id="itemCountLabel">4 mặt hàng</span>
+</div>
+<button class="flex items-center gap-1.5 bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary px-3 py-1.5 rounded-lg shadow-sm font-label-md text-label-md transition-all active:scale-95" onclick="openFormModal('Thêm mới trái cây')">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Thêm mới</span>
+</button>
+</div>
+<!-- Fruit List Cards -->
+<div class="flex flex-col gap-space-sm" id="fruitList">
+<!-- Card 1: Dâu tây Đà Lạt (Expiring Soon - Warning) -->
+<div class="fruit-item bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-sm relative transition-all" data-name="Dâu tây Hana Đà Lạt" data-status="warning">
+<div class="flex gap-space-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up fresh vibrant red Hana strawberries packaged neatly inside an eco-friendly cardboard produce punnet in a natural light boutique fruit market" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPIJkJ4LOcxcLFZPKsmvrXuX_hdl88V-N7NeKnA5X64Kszm5OhI7w3m-crtv6-U_yjVN664xkB6tlKlmu8fgC1sF9jUTIr-sgTk6qCV0cA8Rm5EIx1cKgftX9O4k1bwyJMQHeh4pvtUGBgFN8wAZdHy-tM9cYEg3tA0LZ9C5AgjM-EVgwmAipQU4u-ugkubA-fz5ukVoyTvhipUEEamdNi0JHe4O0Slna4TgOibfsY1oG1seqPMfawKg"/>
+<span class="absolute bottom-1 left-1 bg-on-surface/75 text-inverse-on-surface text-[10px] px-1 rounded font-label-sm">Hộp 500g</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h2 class="font-title-md text-title-md text-on-surface truncate">Dâu tây Hana Đà Lạt</h2>
+<!-- Status Badge: Expiring Soon -->
+<span class="flex-shrink-0 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+                Còn 2 ngày
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Trái cây Đà Lạt • Lô: #DL-2905</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div>
+<span class="font-title-lg text-title-lg text-primary font-bold">145.000đ</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ hộp</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Tồn kho</span>
+<span class="font-title-md text-title-md text-secondary font-bold">18 hộp</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Expiry Date & Quick Stepper Row -->
+<div class="pt-space-xs flex items-center justify-between bg-surface-container-low/60 p-2 rounded-lg">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">event</span>
+<span class="font-label-md text-label-md">HSD: <strong class="text-on-surface font-semibold">22/10/2024</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openDetailModal('Dâu tây Hana Đà Lạt', '145.000đ', '18 hộp', '22/10/2024', 'Trái cây Đà Lạt', 'Dâu tây giống Nhật Bản trồng theo tiêu chuẩn hữu cơ tại nông trường Lạc Dương. Vị ngọt đậm, thơm đặc trưng, quả mọng đều màu.')" title="Chi tiết">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openFormModal('Chỉnh sửa Dâu tây', 'Dâu tây Hana Đà Lạt', 'Trái cây Đà Lạt', '145000', '18', '2024-10-22', 'Dâu tây giống Nhật trồng nhà kính')" title="Sửa">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-error-container/80 text-on-error-container flex items-center justify-center hover:bg-error-container transition-colors" onclick="promptDelete('Dâu tây Hana Đà Lạt')" title="Xóa">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Bơ Sáp 034 (Fresh - Green) -->
+<div class="fruit-item bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-sm relative transition-all" data-name="Bơ sáp dài 034 Lâm Đồng" data-status="fresh">
+<div class="flex gap-space-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Glossy dark green elongated 034 avocado fruits displayed on rustic wooden crate in organic Vietnamese grocer store daylight high detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQgI1OXOh88SeuCNVGD70YdY-NPHQsn32lgx6Bf-xlubU4vUSoedBnadCQqWuTO4KB9t4D-RNKGSEvh38QxzHAGEwD95nHf0pEdr8l-wI0yp9QkN8fCq44DgBsW-d53F1XlRKnxnrH12jWRLIUElO_bN3-_akIU8gBt091hk8j0bUhM27Cm6LQ1MSwO52ZpnGTVpDGjT7WQdPK8TnIq6f6OmSl3Eut1nc6xfnAc1PRbHhYBN8B_aGsQg"/>
+<span class="absolute bottom-1 left-1 bg-on-surface/75 text-inverse-on-surface text-[10px] px-1 rounded font-label-sm">Kg</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h2 class="font-title-md text-title-md text-on-surface truncate">Bơ sáp dài 034 Bảo Lộc</h2>
+<!-- Status Badge: Fresh -->
+<span class="flex-shrink-0 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Tươi mới (7d)
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nội địa • Lô: #BL-8812</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div>
+<span class="font-title-lg text-title-lg text-primary font-bold">68.000đ</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ kg</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Tồn kho</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">64 kg</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Expiry Date & Quick Stepper Row -->
+<div class="pt-space-xs flex items-center justify-between bg-surface-container-low/60 p-2 rounded-lg">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">event_available</span>
+<span class="font-label-md text-label-md">HSD: <strong class="text-on-surface font-semibold">28/10/2024</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openDetailModal('Bơ sáp dài 034 Bảo Lộc', '68.000đ', '64 kg', '28/10/2024', 'Nội địa', 'Bơ sáp hạt lép dẻo béo, trái dài đều đẹp từ 35-45cm. Vỏ xanh bóng, ruột vàng ươm, thu hoạch đúng độ già sinh lý.')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openFormModal('Chỉnh sửa Bơ sáp', 'Bơ sáp dài 034 Bảo Lộc', 'Nội địa', '68000', '64', '2024-10-28', 'Bơ loại 1 quả dài')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-error-container/80 text-on-error-container flex items-center justify-center hover:bg-error-container transition-colors" onclick="promptDelete('Bơ sáp dài 034 Bảo Lộc')">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Nho Xanh Autumn Crisp Mỹ (Fresh - Green) -->
+<div class="fruit-item bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-sm relative transition-all" data-name="Nho xanh Autumn Crisp Mỹ" data-status="fresh">
+<div class="flex gap-space-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Plump crisp emerald green seedless Autumn Crisp grapes bunch with fresh natural bloom resting in grocery display basket bright clean lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvMrkWETaTjCjZ7tmHvdanyiH7yK-ZOTOeEvBvovNgcNCjrtlWQD1phM_duflUFvXUkdo59E79v36L54ZO07lNIx0nMElARknO5Np5TjQ1F5B1BlXpr63vxiNueB94NUiIyWIh6On87QkbJkDwitiDRwBOj-7ESRaslKnj1W1-vMeqD9mqGunpREi_aIaJPRuDvVd5vhm_Tbtw2jgdStwMYlzfNPzahH6Kj7foSnJN0rckKTqfK4BI0Q"/>
+<span class="absolute bottom-1 left-1 bg-on-surface/75 text-inverse-on-surface text-[10px] px-1 rounded font-label-sm">Hộp 1kg</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h2 class="font-title-md text-title-md text-on-surface truncate">Nho xanh Autumn Crisp Mỹ</h2>
+<span class="flex-shrink-0 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Tươi mới (12d)
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nhập khẩu • Lô: #US-5120</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div>
+<span class="font-title-lg text-title-lg text-primary font-bold">280.000đ</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ kg</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Tồn kho</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">32 hộp</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between bg-surface-container-low/60 p-2 rounded-lg">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">event_available</span>
+<span class="font-label-md text-label-md">HSD: <strong class="text-on-surface font-semibold">05/11/2024</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openDetailModal('Nho xanh Autumn Crisp Mỹ', '280.000đ', '32 hộp', '05/11/2024', 'Nhập khẩu', 'Nho nhập khẩu đường hàng không giữ trọn độ giòn rụm và phấn tự nhiên trên vỏ. Không hạt, vị ngọt thanh mát đậm vị.')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openFormModal('Chỉnh sửa Nho xanh', 'Nho xanh Autumn Crisp Mỹ', 'Nhập khẩu', '280000', '32', '2024-11-05', 'Hàng bay cao cấp đóng hộp')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-error-container/80 text-on-error-container flex items-center justify-center hover:bg-error-container transition-colors" onclick="promptDelete('Nho xanh Autumn Crisp Mỹ')">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Chuối Tiêu Laba (Expired - Red Alert) -->
+<div class="fruit-item bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-sm relative transition-all" data-name="Chuối tiêu Laba Đà Lạt" data-status="expired">
+<div class="flex gap-space-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover grayscale-[30%]" data-alt="Ripe yellow golden Laba bananas with tiny sugar freckles on skin resting on clean grocer retail shelf warm ambient studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBim_-pU8a5YByLEetK6bpwlh4ytOw_yyozzEZvWlfureR2o9lJtGRkbMxlH1qYufu5s9XxkuFUgyQHXYVJY1HziMBGBkvTU0ckeyVQMfd7c-C_dUKVNFOn5RJle5v0kb31x4SJGHeEDpCzZHe9AeubzmZI13fFQdVh58TCZs4w2SCWSZBhgpj4PsJMfNc2CPhJdtjw3XJHH5rLeeAb1aZJsxnHTFKdpsKZGnQrWMPYUz19xp05gN_E_w"/>
+<span class="absolute bottom-1 left-1 bg-error text-on-error text-[10px] px-1 rounded font-label-sm font-bold">Hết hạn</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h2 class="font-title-md text-title-md text-on-surface truncate">Chuối tiêu Laba Đà Lạt</h2>
+<!-- Status Badge: Expired -->
+<span class="flex-shrink-0 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">warning</span>
+                Hết hạn (-1d)
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nội địa • Lô: #LB-1049</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div>
+<span class="font-title-lg text-title-lg text-outline line-through font-bold">35.000đ</span>
+<span class="font-body-sm text-body-sm text-error font-semibold ml-1">Cần thanh lý</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Tồn kho</span>
+<span class="font-title-md text-title-md text-error font-bold">12 nải</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Expiry Date & Action Buttons -->
+<div class="pt-space-xs flex items-center justify-between bg-error-container/30 p-2 rounded-lg">
+<div class="flex items-center gap-1.5 text-error">
+<span class="material-symbols-outlined text-[16px]">error_outline</span>
+<span class="font-label-md text-label-md">Đã quá hạn từ: <strong>19/10/2024</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded-lg bg-tertiary text-on-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow-sm" onclick="openFormModal('Xử lý lô Chuối Laba', 'Chuối tiêu Laba Đà Lạt', 'Nội địa', '15000', '12', '2024-10-19', 'Giảm giá 60% làm sinh tố hoặc chế biến bánh chuối')">
+<span class="material-symbols-outlined text-[14px]">price_change</span>
+            Xả hàng
+          </button>
+<button class="w-8 h-8 rounded-lg bg-error text-on-error flex items-center justify-center hover:opacity-90 transition-opacity" onclick="promptDelete('Chuối tiêu Laba Đà Lạt')" title="Hủy bỏ lô">
+<span class="material-symbols-outlined text-[16px]">delete_forever</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center py-space-xl text-center" id="emptyState">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center mb-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[32px]">inventory</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Không tìm thấy trái cây</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-[240px]">Không có sản phẩm nào phù hợp với bộ lọc hiện tại của bạn.</p>
+<button class="mt-space-md px-4 py-2 rounded-full bg-surface-container text-primary font-label-md text-label-md font-bold" onclick="setFilter('all'); clearSearch()">
+      Xóa bộ lọc
+    </button>
+</div>
+<!-- Modal / Bottom Sheet: Thêm & Chỉnh sửa trái cây -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden flex-col justify-end transition-opacity" id="fruitFormModal">
+<div class="bg-surface rounded-t-3xl max-h-[795px] overflow-y-auto w-full p-space-lg shadow-2xl flex flex-col gap-space-md animate-in slide-in-from-bottom duration-200">
+<!-- Modal Header -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">nutrition</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="modalTitle">Thêm trái cây mới</h2>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="closeFormModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Form Inputs -->
+<form class="flex flex-col gap-space-md" id="fruitDataForm" onsubmit="handleFormSubmit(event)">
+<!-- Tên trái cây -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Tên sản phẩm *</label>
+<input class="h-12 px-3.5 bg-surface-container-low rounded-xl font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:bg-surface-container-lowest focus:shadow-sm" id="formFruitName" placeholder="VD: Táo Envy New Zealand Size 70" required="" type="text"/>
+</div>
+<!-- Danh mục & Giá bán -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Danh mục *</label>
+<select class="h-12 px-3 bg-surface-container-low rounded-xl font-body-md text-body-md text-on-surface focus:outline-none" id="formFruitCategory">
+<option value="Trái cây nhập khẩu">Nhập khẩu</option>
+<option value="Trái cây nội địa">Nội địa</option>
+<option value="Trái cây Đà Lạt">Đà Lạt</option>
+<option value="Hàng hữu cơ">Hữu cơ Organic</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Giá bán (VND) *</label>
+<input class="h-12 px-3.5 bg-surface-container-low rounded-xl font-body-md text-body-md text-on-surface focus:outline-none" id="formFruitPrice" placeholder="VD: 150000" required="" type="number"/>
+</div>
+</div>
+<!-- Số lượng tồn & Đơn vị tính -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Tồn kho ban đầu *</label>
+<input class="h-12 px-3.5 bg-surface-container-low rounded-xl font-body-md text-body-md text-on-surface focus:outline-none" id="formFruitQty" placeholder="VD: 45" required="" type="number"/>
+</div>
+<!-- Hạn sử dụng (Expiry Date Picker) -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Ngày hết hạn (HSD) *</label>
+<input class="h-12 px-3 bg-surface-container-low rounded-xl font-body-md text-body-md text-on-surface focus:outline-none" id="formFruitExpiry" required="" type="date"/>
+</div>
+</div>
+<!-- Quick preset buttons for expiration estimate -->
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hạn gợi ý:</span>
+<button class="px-2 py-1 rounded bg-secondary-fixed/50 text-on-secondary-fixed-variant font-label-sm text-label-sm" onclick="setQuickDate(3)" type="button">+3 ngày</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm" onclick="setQuickDate(7)" type="button">+7 ngày</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm" onclick="setQuickDate(14)" type="button">+14 ngày</button>
+</div>
+<!-- Mô tả sản phẩm -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Mô tả đặc điểm / Bảo quản</label>
+<textarea class="p-3 bg-surface-container-low rounded-xl font-body-md text-body-md text-on-surface focus:outline-none placeholder:text-on-surface-variant/60" id="formFruitDesc" placeholder="Nhập ghi chú nguồn gốc vườn trồng, hướng dẫn nhiệt độ bảo quản lạnh 2-5°C..." rows="3"></textarea>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs mt-space-xs">
+<button class="h-12 rounded-full bg-surface-container text-on-surface font-title-md text-title-md font-semibold active:scale-95 transition-transform" onclick="closeFormModal()" type="button">
+            Hủy bỏ
+          </button>
+<button class="h-12 rounded-full bg-primary text-on-primary font-title-md text-title-md font-bold shadow-md active:scale-95 transition-transform flex items-center justify-center gap-1.5" type="submit">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span>Lưu kho</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Modal: Xem chi tiết sản phẩm -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden flex-col justify-end transition-opacity" id="detailModal">
+<div class="bg-surface rounded-t-3xl max-h-[751px] overflow-y-auto w-full p-space-lg shadow-2xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Chi tiết lô trái cây</h2>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="closeDetailModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Tên sản phẩm</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="detailName"></span>
+<span class="font-label-md text-label-md text-primary font-semibold" id="detailCategory"></span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-low rounded-xl p-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Giá niêm yết</span>
+<span class="font-title-lg text-title-lg text-primary font-bold" id="detailPrice"></span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Tồn kho thực tế</span>
+<span class="font-title-lg text-title-lg text-on-surface font-bold" id="detailQty"></span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Hạn sử dụng</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold" id="detailExpiry"></span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">calendar_clock</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block mb-1">Mô tả &amp; Hướng dẫn</span>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" id="detailDesc"></p>
+</div>
+</div>
+<button class="w-full h-12 rounded-full bg-primary text-on-primary font-title-md text-title-md font-bold mt-space-xs" onclick="closeDetailModal()">
+        Đã hiểu
+      </button>
+</div>
+</div>
+<!-- Delete Confirmation Toast / Dialog -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden items-center justify-center px-margin" id="deleteConfirmDialog">
+<div class="bg-surface rounded-2xl w-full max-w-sm p-space-lg shadow-2xl flex flex-col items-center text-center gap-space-sm">
+<div class="w-14 h-14 rounded-full bg-error-container text-on-error-container flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[28px]">delete_forever</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Xác nhận xóa lô hàng?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Bạn sắp gỡ bỏ <strong class="text-on-surface" id="deleteFruitName"></strong> khỏi cơ sở dữ liệu kiểm kê. Thao tác này không thể hoàn tác.</p>
+<div class="grid grid-cols-2 gap-space-sm w-full mt-space-sm">
+<button class="h-11 rounded-full bg-surface-container text-on-surface font-title-md text-title-md font-semibold" onclick="closeDeleteDialog()">
+          Giữ lại
+        </button>
+<button class="h-11 rounded-full bg-error text-on-error font-title-md text-title-md font-bold shadow-sm" onclick="executeDelete()">
+          Xóa bỏ
+        </button>
+</div>
+</div>
+</div>
+<!-- Success Notification Snack -->
+<div class="fixed bottom-24 left-margin right-margin z-50 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-lg flex items-center justify-between transition-all transform translate-y-20 opacity-0 pointer-events-none" id="snackMessage">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-inverse-primary text-[20px]">check_circle</span>
+<span class="font-label-lg text-label-lg" id="snackText">Cập nhật thành công!</span>
+</div>
+</div>
+</div>
+<script>
+  let currentTargetFruit = '';
+  let activeFilter = 'all';
+
+  function setFilter(type) {
+    activeFilter = type;
+    document.querySelectorAll('.filter-chip').forEach(btn => {
+      if (btn.getAttribute('data-chip') === type) {
+        btn.classList.add('bg-primary', 'text-on-primary');
+        btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+      } else {
+        btn.classList.remove('bg-primary', 'text-on-primary');
+        btn.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+      }
+    });
+    applyFilterAndSearch();
+  }
+
+  function filterStatus(statusKey) {
+    setFilter(statusKey);
+  }
+
+  function handleSearch(query) {
+    applyFilterAndSearch();
+  }
+
+  function clearSearch() {
+    const input = document.getElementById('searchInput');
+    if (input) {
+      input.value = '';
+      applyFilterAndSearch();
+    }
+  }
+
+  function applyFilterAndSearch() {
+    const query = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
+    const items = document.querySelectorAll('.fruit-item');
+    let visibleCount = 0;
+
+    items.forEach(item => {
+      const status = item.getAttribute('data-status');
+      const name = (item.getAttribute('data-name') || '').toLowerCase();
+      
+      const matchesFilter = (activeFilter === 'all') || (status === activeFilter);
+      const matchesSearch = !query || name.includes(query);
+
+      if (matchesFilter && matchesSearch) {
+        item.classList.remove('hidden');
+        item.classList.add('flex');
+        visibleCount++;
+      } else {
+        item.classList.add('hidden');
+        item.classList.remove('flex');
+      }
+    });
+
+    const empty = document.getElementById('emptyState');
+    const countLabel = document.getElementById('itemCountLabel');
+    if (countLabel) countLabel.innerText = `${visibleCount} mặt hàng`;
+    
+    if (empty) {
+      if (visibleCount === 0) {
+        empty.classList.remove('hidden');
+        empty.classList.add('flex');
+      } else {
+        empty.classList.add('hidden');
+        empty.classList.remove('flex');
+      }
+    }
+  }
+
+  function openFormModal(title, name = '', cat = 'Trái cây nội địa', price = '', qty = '', expiry = '', desc = '') {
+    const modal = document.getElementById('fruitFormModal');
+    const titleEl = document.getElementById('modalTitle');
+    if (titleEl) titleEl.innerText = title;
+    
+    document.getElementById('formFruitName').value = name;
+    document.getElementById('formFruitCategory').value = cat;
+    document.getElementById('formFruitPrice').value = price;
+    document.getElementById('formFruitQty').value = qty;
+    document.getElementById('formFruitExpiry').value = expiry;
+    document.getElementById('formFruitDesc').value = desc;
+
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
+  function closeFormModal() {
+    const modal = document.getElementById('fruitFormModal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  function setQuickDate(days) {
+    const date = new Date();
+    date.setDate(date.getDate() + days);
+    const dateString = date.toISOString().split('T')[0];
+    const expiryInput = document.getElementById('formFruitExpiry');
+    if (expiryInput) expiryInput.value = dateString;
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    closeFormModal();
+    showToast('Lưu thông tin trái cây thành công!');
+  }
+
+  function openDetailModal(name, price, qty, expiry, cat, desc) {
+    document.getElementById('detailName').innerText = name;
+    document.getElementById('detailCategory').innerText = cat;
+    document.getElementById('detailPrice').innerText = price;
+    document.getElementById('detailQty').innerText = qty;
+    document.getElementById('detailExpiry').innerText = expiry;
+    document.getElementById('detailDesc').innerText = desc;
+
+    const modal = document.getElementById('detailModal');
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
+  function closeDetailModal() {
+    const modal = document.getElementById('detailModal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  function promptDelete(name) {
+    currentTargetFruit = name;
+    document.getElementById('deleteFruitName').innerText = name;
+    const dialog = document.getElementById('deleteConfirmDialog');
+    if (dialog) {
+      dialog.classList.remove('hidden');
+      dialog.classList.add('flex');
+    }
+  }
+
+  function closeDeleteDialog() {
+    const dialog = document.getElementById('deleteConfirmDialog');
+    if (dialog) {
+      dialog.classList.add('hidden');
+      dialog.classList.remove('flex');
+    }
+  }
+
+  function executeDelete() {
+    closeDeleteDialog();
+    // Look for matching item in dom to remove visually
+    document.querySelectorAll('.fruit-item').forEach(el => {
+      if (el.getAttribute('data-name')?.includes(currentTargetFruit)) {
+        el.style.opacity = '0';
+        el.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          el.remove();
+          applyFilterAndSearch();
+        }, 200);
+      }
+    });
+    showToast(`Đã xóa "${currentTargetFruit}" khỏi kho`);
+  }
+
+  function showToast(msg) {
+    const snack = document.getElementById('snackMessage');
+    const snackText = document.getElementById('snackText');
+    if (snack && snackText) {
+      snackText.innerText = msg;
+      snack.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      snack.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        snack.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+        snack.classList.remove('translate-y-0', 'opacity-100');
+      }, 2500);
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_16px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[48px] py-1 text-on-surface-variant transition-colors" data-path="cua-hang" href="#"><span class="material-symbols-outlined text-[24px]">storefront</span><span class="font-label-md text-label-md mt-0.5">Cửa hàng</span></a><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[48px] py-1 text-on-surface-variant transition-colors" data-path="don-hang" href="#"><span class="material-symbols-outlined text-[24px]">receipt_long</span><span class="font-label-md text-label-md mt-0.5">Đơn hàng</span></a><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[48px] py-1 text-on-surface-variant transition-colors" data-path="quan-ly-kho" href="#"><span class="material-symbols-outlined text-[24px]">inventory_2</span><span class="font-label-md text-label-md mt-0.5">Quản lý kho</span></a><a class="flex flex-col items-center justify-center min-w-[64px] min-h-[48px] py-1 text-on-surface-variant transition-colors" data-path="tai-khoan" href="#"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-md text-label-md mt-0.5">Tài khoản</span></a></div></nav></body></html>

@@ -207,7 +207,7 @@ fun placeOrder(customerId: Int, fruitId: Int, qty: Int): Long {
 
 ## 4. Phân công 3 thành viên
 
-### 👤 TV1 — Leader · Nền tảng + Admin Form & Đơn hàng (Yêu cầu 3, 4, 7-phía admin, 8)
+### 👤 TV1 — Leader · Nền tảng (Yêu cầu 3, 8)
 
 | # | Công việc | File sở hữu |
 |---|---|---|
@@ -216,13 +216,11 @@ fun placeOrder(customerId: Int, fruitId: Int, qty: Int): Long {
 | 1.3 | 4 data class + 4 DAO theo contract mục 3.3 (**bao gồm cả `placeOrder`, `updateStatus`**) | `data/model/**`, `data/dao/**` |
 | 1.4 | `Constants`, `HashUtil`, `DateUtil`, `SessionManager` (TV2 dùng cho login — chốt API bên dưới) | `util/**` |
 | 1.5 | **Tạo stub rỗng cho TẤT CẢ Activity** + đăng ký sẵn trong `AndroidManifest.xml` | `AndroidManifest.xml` |
-| 1.6 | `FruitFormActivity` (dùng chung Thêm/Sửa qua extra `fruitId`): nhập 6 trường, **DatePickerDialog** cho HSD, validate (tên không rỗng, giá > 0, SL ≥ 0), lưu xong `finish()` | `ui/admin/FruitFormActivity.kt`, `activity_fruit_form.xml` |
-| 1.7 | `AdminOrderActivity` + `AdminOrderAdapter`: danh sách tất cả đơn (mã, khách, ngày, tổng, trạng thái), nút chuyển trạng thái kế tiếp (Pending→Confirmed→Completed), ẩn nút khi Completed | `AdminOrderActivity.kt`, `AdminOrderAdapter.kt`, layout tương ứng, `res/values/colors_order.xml` |
-| 1.8 | Review & merge PR, test tích hợp, hỗ trợ người chậm | — |
+| 1.6 | Review & merge PR, test tích hợp, hỗ trợ người chậm | — |
 
 `SessionManager` cần có: `saveSession(id, username, role, customerId)`, `isLoggedIn()`, `getRole()`, `getCustomerId()`, `saveRemember(username, password)`, `clearRemember()`, `getRememberUser()/getRememberPass()`, `logout()`.
 
-### 👤 TV2 — Đăng nhập + Admin quản lý trái cây (Yêu cầu 1, 2, 4, 5)
+### 👤 TV2 — Đăng nhập + Admin toàn bộ chức năng (Yêu cầu 1, 2, 4, 5, 7-phía admin)
 
 | # | Công việc | File sở hữu |
 |---|---|---|
@@ -231,6 +229,8 @@ fun placeOrder(customerId: Int, fruitId: Int, qty: Int): Long {
 | 2.3 | Logout: hàm dùng chung (VD `fun Activity.logout()` trong `ui/auth/AuthExt.kt`) gọi `SessionManager.logout()` + về Login, xóa back stack — TV3 và màn Admin gọi lại | `ui/auth/AuthExt.kt` |
 | 2.4 | `AdminMainActivity`: RecyclerView danh sách trái cây, ô tìm kiếm (theo tên/loại, lọc realtime bằng `doAfterTextChanged`), FAB "Thêm" → mở `FruitFormActivity`, reload ở `onResume`, menu: *Quản lý đơn hàng*, *Đăng xuất* | `ui/admin/AdminMainActivity.kt`, `activity_admin_main.xml` |
 | 2.5 | `AdminFruitAdapter` + `item_fruit_admin.xml`: tên, loại, giá, SL, HSD, **badge Expired / Expiring soon**; nút Sửa (mở form kèm `fruitId`) / Xóa (dialog xác nhận) | `AdminFruitAdapter.kt`, `item_fruit_admin.xml`, `res/values/colors_admin.xml` |
+| 2.6 | `FruitFormActivity` (dùng chung Thêm/Sửa qua extra `fruitId`): nhập 6 trường, **DatePickerDialog** cho HSD, validate (tên không rỗng, giá > 0, SL ≥ 0), lưu xong `finish()` | `ui/admin/FruitFormActivity.kt`, `activity_fruit_form.xml` |
+| 2.7 | `AdminOrderActivity` + `AdminOrderAdapter`: danh sách tất cả đơn (mã, khách, ngày, tổng, trạng thái), nút chuyển trạng thái kế tiếp (Pending→Confirmed→Completed), ẩn nút khi Completed | `AdminOrderActivity.kt`, `AdminOrderAdapter.kt`, layout tương ứng, `res/values/colors_order.xml` |
 
 ### 👤 TV3 — Chức năng Customer (Yêu cầu 5, 6, 7-phía customer)
 
@@ -255,14 +255,14 @@ gantt
     axisFormat %H:%M
     section TV1
     Setup repo + SQLite + DAO + Stub     :t1a, 00:00, 50m
-    FruitFormActivity (Thêm/Sửa)         :t1b, after t1a, 40m
-    Admin quản lý đơn hàng               :t1c, after t1b, 35m
-    Review PR + tích hợp + test          :t1d, after t1c, 55m
+    Review PR + tích hợp + test          :t1b, after t1a, 60m
     section TV2
     Vẽ layout login/register/admin       :t2a, 00:00, 50m
     Login + Remember me + Register       :t2b, after t2a, 55m
-    Admin DS trái cây + Search + Xóa     :t2c, after t2b, 45m
-    Fix bug                              :t2d, after t2c, 30m
+    Admin DS trái cây + Search + Xóa     :t2c, after t2b, 35m
+    FruitFormActivity (Thêm/Sửa)         :t2d, after t2c, 30m
+    Admin quản lý đơn hàng               :t2e, after t2d, 30m
+    Fix bug                              :t2f, after t2e, 20m
     section TV3
     Vẽ layout XML customer (chưa cần DB) :t3a, 00:00, 50m
     Danh sách + Search + Chi tiết        :t3b, after t3a, 60m
@@ -281,7 +281,7 @@ gantt
 
 ## 6. Quy trình Git (Yêu cầu 8)
 
-- **Nhánh:** `main` (luôn build được) · `feature/admin-order` (TV1, gồm cả FruitForm) · `feature/auth` + `feature/admin-fruit` (TV2) · `feature/customer` (TV3).
+- **Nhánh:** `main` (TV1 dựng nền & merge code) · `feature/auth` + `feature/admin-fruit` + `feature/admin-order` (TV2) · `feature/customer` (TV3).
 - TV2 làm `feature/auth` trước → mở PR merge sớm (~1:45) để TV3 test luồng đăng nhập thật, rồi tạo `feature/admin-fruit` từ `main` mới.
 - **Commit:** nhỏ, thường xuyên, theo mẫu `feat: ...`, `fix: ...`, `ui: ...`, `chore: ...` (VD `feat(admin): add fruit search`).
 - **Pull Request:** mỗi tính năng 1 PR → 1 người khác review nhanh → **Squash/Merge**. TV1 là người merge cuối.

@@ -11,16 +11,50 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FruitTest">
+
+        <!-- Auth Activities -->
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.auth.LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.auth.RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Admin Activities -->
+        <activity
+            android:name=".ui.admin.AdminMainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.admin.FruitFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.admin.AdminOrderActivity"
+            android:exported="false" />
+
+        <!-- Customer Activities -->
+        <activity
+            android:name=".ui.customer.CustomerMainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.customer.FruitDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.customer.OrderHistoryActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
